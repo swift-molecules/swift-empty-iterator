@@ -1,18 +1,21 @@
 import Empty_Iterator_Primitives
 import Testing
 
-@Suite("Empty Iterator Tests")
-struct EmptyIteratorTests {
+@Suite struct `Empty Tests` {
     @Suite struct Unit {}
+    @Suite struct `Edge Case` {}
+    @Suite struct Integration {}
 }
 
-extension EmptyIteratorTests.Unit {
+extension `Empty Tests`.Unit {
     @Test
     func `empty iterator yields nothing`() {
         var iter = Empty<Int>()
         #expect(iter.next() == nil)
     }
+}
 
+extension `Empty Tests`.`Edge Case` {
     @Test
     func `empty iterator stays exhausted across repeated calls`() {
         var iter = Empty<String>()
