@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-empty-iterator-primitives",
+    name: "swift-empty-iterator",
     platforms: [
         .macOS(.v27),
         .iOS(.v27),
@@ -13,31 +13,31 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Empty Iterator Primitives",
-            targets: ["Empty Iterator Primitives"]
+            name: "Empty Iterator",
+            targets: ["Empty Iterator"]
         )
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-primitives/swift-empty-primitives.git",
+            url: "https://github.com/swift-molecules/swift-empty.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-iterator-primitives.git",
+            url: "https://github.com/swift-molecules/swift-iterator.git",
             branch: "main"
         ),
     ],
     targets: [
         .target(
-            name: "Empty Iterator Primitives",
+            name: "Empty Iterator",
             dependencies: [
-                .product(name: "Empty Primitives", package: "swift-empty-primitives"),
-                .product(name: "Iterator Protocol", package: "swift-iterator-primitives"),
+                .product(name: "Empty", package: "swift-empty"),
+                .product(name: "Iterator Protocol", package: "swift-iterator"),
             ]
         ),
         .testTarget(
-            name: "Empty Iterator Primitives Tests",
-            dependencies: ["Empty Iterator Primitives"]
+            name: "Empty Iterator Tests",
+            dependencies: ["Empty Iterator"]
         ),
     ],
     swiftLanguageModes: [.v6]

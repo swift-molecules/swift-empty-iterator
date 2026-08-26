@@ -1,4 +1,4 @@
-import Empty_Iterator_Primitives
+import Empty_Iterator
 import Testing
 
 @Suite struct `Empty Tests` {
