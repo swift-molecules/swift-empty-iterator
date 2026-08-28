@@ -30,7 +30,7 @@ var tokens = Empty<Token>()
 // tokens.next() is always nil.
 ```
 
-Importing `Empty_Iterator` re-exports both `Empty` (from `swift-empty`) and `Iterator.Protocol` (from `swift-iterator`), so a single import brings in the type and the protocol it satisfies.
+Importing `Empty_Iterator` re-exports both atom-owned `Empty` and `Iterator`, so a single import brings in the type and the protocol it satisfies.
 
 ---
 
@@ -51,7 +51,7 @@ dependencies: [
 )
 ```
 
-Requires Swift 6.3.1 and macOS 26 / iOS 26 / tvOS 26 / watchOS 26 / visionOS 26 (or the matching Linux / Windows toolchain).
+Requires Swift 6.4 and macOS 27 / iOS 27 / tvOS 27 / watchOS 27 / visionOS 27 (or the matching Linux / Windows toolchain).
 
 ---
 
@@ -61,7 +61,7 @@ One library product. An integration package: it declares no types of its own, on
 
 | Product | Target | Purpose |
 |---------|--------|---------|
-| `Empty Iterator` | `Sources/Empty Iterator/` | Attaches the retroactive `Iterator.Protocol` conformance to `Empty<Element>` (`next()` always `nil`, `Failure == Never`) over the full `~Copyable & ~Escapable` element domain, and re-exports `Empty` and `Iterator Protocol`. |
+| `Empty Iterator` | `Sources/Empty Iterator/` | Attaches the retroactive `Iterator.Protocol` conformance to `Empty<Element>` (`next()` always `nil`, `Failure == Never`) over the full `~Copyable & ~Escapable` element domain, and re-exports the current `Empty` and `Iterator` owners. |
 
 Foundation-free.
 
@@ -71,7 +71,7 @@ Foundation-free.
 
 | Platform | Status |
 |----------|--------|
-| macOS 26 | Full support |
+| macOS 27 | Full support |
 | Linux | Full support |
 | Windows | Full support |
 | iOS / tvOS / watchOS / visionOS | Supported |

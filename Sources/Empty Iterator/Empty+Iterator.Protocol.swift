@@ -1,3 +1,6 @@
+public import Empty
+public import Iterator
+
 extension Empty: @retroactive Iterator.`Protocol` where Element: ~Copyable & ~Escapable {
 
     public typealias Failure = Never

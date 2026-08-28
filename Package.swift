@@ -19,11 +19,11 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-empty.git",
+            url: "https://github.com/swift-atoms/swift-empty.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-iterator.git",
+            url: "https://github.com/swift-atoms/swift-iterator.git",
             branch: "main"
         ),
     ],
@@ -32,7 +32,7 @@ let package = Package(
             name: "Empty Iterator",
             dependencies: [
                 .product(name: "Empty", package: "swift-empty"),
-                .product(name: "Iterator Protocol", package: "swift-iterator"),
+                .product(name: "Iterator", package: "swift-iterator"),
             ]
         ),
         .testTarget(
